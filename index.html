@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pathfinder: BFS, DFS, A*</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>PATHFINDER</h1>
+  <p class="sub">Draw walls, drag S and E, pick an algorithm, press Run.</p>
+
+  <div class="bar">
+    <div class="seg" id="algos">
+      <button data-a="bfs" class="on">BFS</button>
+      <button data-a="dfs">DFS</button>
+      <button data-a="astar">A*</button>
+    </div>
+    <button class="primary" id="run">Run</button>
+    <button id="reset">Reset path</button>
+    <button id="maze">Random walls</button>
+    <button id="clear">Clear all</button>
+    <label>Speed <input type="range" id="speed" min="1" max="10" value="6"></label>
+  </div>
+
+  <canvas id="c"></canvas>
+
+  <div class="stats">
+    <div>Visited <b id="sv">0</b></div>
+    <div>Path length <b id="sp">-</b></div>
+    <div>Status <b id="ss">Ready</b></div>
+  </div>
+
+  <div class="legend">
+    <span><i style="background:var(--ink)"></i>Wall</span>
+    <span><i style="background:var(--g2)"></i>Frontier</span>
+    <span><i style="background:var(--g1)"></i>Visited</span>
+    <span><i style="background:var(--bg)"></i>S start / E end / dots = path</span>
+  </div>
+  <p class="desc" id="desc"></p>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
